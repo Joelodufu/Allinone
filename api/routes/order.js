@@ -36,7 +36,7 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
-//DELETE
+//DELETE 
 router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
     await Order.findByIdAndDelete(req.params.id);
@@ -83,7 +83,7 @@ router.get("/income", verifyTokenAndAdmin, async (req, res) => {
           ...(productId && {
             products: { $elemMatch: { productId } },
           }),
-        },
+        }
       },
       {
         $project: {

@@ -27,6 +27,7 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
       req.params.id,
       {
         $set: req.body,
+        
       },
       { new: true }
     );

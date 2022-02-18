@@ -8,12 +8,12 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
-const stripeRoute = require("./routes/stripe");
+const stripeRoute = require("./routes/paystack");
 const cors = require("cors");
-
+require('dotenv').config()
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URL_ONLINE)
   .then(() => console.log("DB Connection Successfull!"))
   .catch((err) => {
     console.log(err);
